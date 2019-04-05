@@ -5,6 +5,6 @@ RSpec.describe Snack, type: :model do
     it { should validate_presence_of :name }
     it { should validate_presence_of :price }
     it { should have_many :snack_machines }
-    it { should have_many :machines, through: :snack_machines}
+    it { should have_many(:machines).through :snack_machines}
   end
 end
