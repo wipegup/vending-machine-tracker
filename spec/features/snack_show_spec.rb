@@ -17,6 +17,7 @@ RSpec.describe "When a user visits the snack show page", type: :feature do
     visit snack_path(@snack_1)
 
     expect(page).to have_content("snack_1")
+    expect(page).to have_content("$1.52")
 
     within "#machine-#{@mix_drink.id}" do
       expect(page).to have_content("Basement")
