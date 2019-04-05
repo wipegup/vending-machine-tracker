@@ -5,4 +5,9 @@ class Machine < ApplicationRecord
 
   has_many :snack_machines
   has_many :snacks, through: :snack_machines
+
+  def average_price
+    # binding.pry
+    snacks.average(:price)
+  end
 end
