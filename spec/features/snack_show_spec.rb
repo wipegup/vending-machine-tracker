@@ -17,15 +17,17 @@ RSpec.describe "When a user visits the snack show page", type: :feature do
     visit snack_path(@snack_1)
 
     expect(page).to have_content("snack_1")
-    
+
     within "#machine-#{@mix_drink.id}" do
       expect(page).to have_content("Basement")
       expect(page).to have_content("Average Price: $2.03")
+      expect(page).to have_content("2 snacks")
     end
 
     within "#machine-#{@dons.id}" do
       expect(page).to have_content("Don's Mixed Drinks")
       expect(page).to have_content("Average Price: $1.52")
+      expect(page).to have_content("1 snacks")
     end
   end
 end

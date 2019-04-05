@@ -10,4 +10,8 @@ class Machine < ApplicationRecord
     # binding.pry
     snacks.average(:price)
   end
+
+  def num_snacks
+    snacks.count
+  end
 end
